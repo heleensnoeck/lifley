@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: pink; }
+
+a {
+  color: #00B7FF; }
+
+aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  background-color: #292929;
+  text-align: center;
+  border-right: 10px solid transparent;
+  z-index: 25;
+  box-sizing: content-box;
+  background-clip: padding-box;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: border .35s,-webkit-transform .35s;
+  transition: border .35s,transform .35s;
+  -webkit-animation: fadein .35s;
+  animation: fadein .35s; }
+
+ul {
+  position: absolute;
+  top: 0;
+  right: 80px;
+  width: 400px;
+  height: 100%; }
