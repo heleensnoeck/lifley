@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
  	sass = require('gulp-sass'),
  	concat = require('gulp-concat'),
+ 	critical = require('critical').stream,
  	browserSync = require('browser-sync').create('./app');
-
 
 	gulp.task('sass', function() {
 	  return gulp.src('public/styles/*.scss')
@@ -13,28 +13,28 @@ var gulp = require('gulp'),
 	    .pipe(gulp.dest('public/dist'))
 	});
 
-
-	gulp.task('serve', ['sass'], function() {
-
-	    browserSync.init({
-	        proxy: "http://localhost:3000"
-	    });
-
-	    gulp.watch("public/styles/*.scss", ['sass']).on('change', browserSync.reload);
-	    gulp.watch("views/*.ejs").on('change', browserSync.reload);
+	gulp.task('critical', function() {
+	    return gulp.src('views/*.ejs')
+	        .pipe(critical({
+	        	base: 'views/', 
+	        	inline: true, 
+	        	css: ['public/dist/style.css'],
+	        	minify: true
+	        }))
+	        .pipe(gulp.dest('public/dist'));
 	});
 
-	gulp.task('default', ['sass','serve']);
+	//GULP RENAME
 
 
-// // Watch Files For Changes
-// gulp.task('watch:es6', function() {
-// 	browserSync.init({
-// 	  // server: "./app",
-// 	  proxy: "http://localhost:3000"
-// 	});
-// 	gulp.watch('/public/styles/*.scss').on('change', browserSync.reload);
-// });
+	// gulp.task('serve', ['sass'], ['critical'], function() {
 
-// // als je gulp intoetst in de terminal gaat hij de default af op de volgorde die in de array staat
-// gulp.task('default', ['sass',  'watch']);
+	//     browserSync.init({
+	//         proxy: "http://localhost:3000"
+	//     });
+
+	//     gulp.watch("public/styles/*.scss", ['sass']).on('change', browserSync.reload);
+	//     gulp.watch("views/*.ejs").on('change', browserSync.reload);
+	// });
+
+	// gulp.task('default', ['sass','critical','serve']);
