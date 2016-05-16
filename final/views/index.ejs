@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title tit="">To do list</title>
+		<meta name="description" content="To do list">
+		<meta name="author" content="Heleen Snoeck">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+		<style type="text/css">
+.tag,header{background-color:#32b38c}#intro,.logo,header{position:relative}.slider h3,aside,h3{text-align:center}*{margin:0;padding:0;box-sizing:border-box;outline:0}body{font-family:'Source Sans Pro',sans-serif,Helvetica,Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}#intro .register,#intro .subtitle,#intro .title,.tag,h1,h3{font-weight:600}#intro button,h1{font-family:source-sans-pro,Helvetica,Arial,sans-serif}header{height:356px;width:100%;color:#fff;overflow:hidden}#intro{top:5em;left:10em;width:87%}#intro .title{font-size:47px;line-height:1.3em;margin-top:-2px;color:#fff}#intro .subtitle{color:#fff;opacity:.5;line-height:1.6em;font-size:18px;margin-top:6px}#intro button{margin-top:32px;display:inline-block;border-radius:3px;border:1px solid #fff;color:#fff;font-size:16px;font-style:normal;background-color:transparent;padding:14px 23px 16px;border-color:rgba(255,255,255,.5)}#intro .register{color:#292929;opacity:.5;border:0}.logo{width:163px;display:block;float:right;padding:10px;margin:-23px -10px -15px;top:-8em}.slider h3,.title_slider{padding:1em;font-weight:600}#background ul,aside{top:0;position:absolute}.logo img{width:101px;display:flex;flex-direction:column}aside{left:0;bottom:0;width:80px;background-color:#292929;border-right:10px solid transparent;z-index:25;box-sizing:content-box;background-clip:padding-box;-webkit-overflow-scrolling:touch;border-right-color:rgba(41,41,41,.1);height:500%}aside .logo_menu img{margin-top:3em;height:43px}aside .logo_signin img{margin-top:3em}#background ul{right:80px;width:400px;height:100%}#background ul li{list-style:none;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);background-repeat:no-repeat;background-size:cover;background-position:center;border-radius:3px}#background img{opacity:.3;position:absolute}.slider,.tag,.tags{position:relative}#background .one{left:116px;top:-77px;width:120px;height:120px}#background .two{left:179px;top:111px;width:60px;height:60px}#background .tree{left:291px;top:-3px;width:120px;height:120px}#background .four{opacity:1;left:377px;top:37px;width:60px;height:60px}#background .five{left:316px;top:169px;width:160px;height:160px}.slider{min-height:600px;max-height:800px;background-color:#f9f9f9}.slider h3{font-size:14px;color:#a9a9a9}.slider hr{width:30%;margin:0 auto 2em;border-bottom:2px solid #e6e6e6}.image_slider,.image_slider1{background-repeat:none;max-height:600px;width:321px;margin-right:1em;margin-bottom:4em;z-index:1}.article_slider{flex-direction:row;display:flex}.image_slider1{background-image:url(https://s3-eu-west-1.amazonaws.com/bln-production/images/bundle/5456619365758721378c6144_h600.jpg?1414954902522);margin-left:7em}.two{background-image:url(https://s3-eu-west-1.amazonaws.com/bln-production/images/bundle/5456784d61716b5539431636_h600.jpg?1414953210738)}.three{background-image:url(https://s3-eu-west-1.amazonaws.com/bln-production/images/bundles/555eee2428aca59049de2159_h600.jpg?1432284788093)}.four{background-image:url(https://s3-eu-west-1.amazonaws.com/bln-production/images/bundle/553648b5408ec329166167d0_h600.jpeg?1429719775060)}.title_slider{font-size:2.5em;color:#fff;line-height:1.3em;height:8em}.tags{z-index:1000;padding:20px 20px 7px;color:#fff;text-transform:uppercase;font-size:0}.tag{list-style:none;height:26px;font-size:13px;display:inline-block;padding:4px 10px 0;margin-right:24px;margin-bottom:14px;border-radius:3px 0 0 3px;letter-spacing:.5px;transform:rotate(0);top:2em}h1,p{margin-bottom:20px}.tag:after,.tag:before{content:'';position:absolute}.tag:before{width:5px;height:5px;background-color:rgba(0,0,0,.2);border-radius:50%;right:-3px;top:10px;z-index:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.tag:after{top:0;right:-10px;display:block;width:10px;height:100%;background-repeat:no-repeat;background-size:contain;border-radius:0 .5em .5em 0;background-color:#32b38c}.article_info{background-color:#fff;position:relative;top:2em}.article_info .title{display:flex;flex-direction:row;margin-left:1em}.article_info img{width:30px;height:30px;background-color:#eee;border:0;border-radius:4px;margin-top:1em;margin-right:1em}.article_info .name{color:#000;font-size:16px;margin-top:1em}.article_info .description{color:#666;line-height:21px;font-size:16px;margin-left:1em;padding-bottom:1em}h1{color:#252525;font-size:2em}p{line-height:1.6em;color:#777;max-width:840px;font-size:20px;white-space:normal;overflow-wrap:break-word}h3{font-size:14px;color:#a9a9a9;padding:1em}
+</style>
+<script id="loadcss">
+(function(u,s){!function(e){"use strict";var n=function(n,t,o){var l,r=e.document,i=r.createElement("link");if(t)l=t;else{var a=(r.body||r.getElementsByTagName("head")[0]).childNodes;l=a[a.length-1]}var d=r.styleSheets;i.rel="stylesheet",i.href=n,i.media="only x",l.parentNode.insertBefore(i,t?l:l.nextSibling);var f=function(e){for(var n=i.href,t=d.length;t--;)if(d[t].href===n)return e();setTimeout(function(){f(e)})};return i.onloadcssdefined=f,f(function(){i.media=o||"all"}),i};"undefined"!=typeof module?module.exports=n:e.loadCSS=n}("undefined"!=typeof global?global:this);for(var i in u){loadCSS(u[i],s);}}(['https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900','/dist/style.css'],document.getElementById("loadcss")));
+</script>
+<noscript>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/dist/style.css">
+</noscript>
+		
+	</head>
+	<body>
+		<main>
+			<aside>
+				<div class="logo_menu">
+					<img src="/images/logo.png">
+				</div>
+				<div class="logo_signin">
+					<img src="/images/signin.png">
+				</div>
+			</aside>
+			<header>
+				<section id="intro">
+					<h1 class="title">The beauty of the web, bundled.</h1>
+					<h2 class="subtitle">Create, discover and share Bundles of links about your favorite subjects.</h2>
+					<button>What's bundlin all about?</button>
+					<button class="register">Log in / Sign up</button>
+				</section>
+				<div class="logo">
+					<img src="/images/intro-handcrafted.png">
+					<img src="/images/logo_lifely.png">
+				</div>
+				<section id="background">
+					<ul>
+						<li><img class="one" src="/images/teamphoto-01.jpg"></li>
+						<li><img class="two" src="/images/teamphoto-02.jpg"></li>
+						<li><img class="tree" src="/images/teamphoto-03.jpg"></li>
+						<li><img class="four" src="/images/teamphoto-04.jpg"></li>
+						<li><img class="five" src="/images/teamphoto-05.jpg"></li>
+					</ul>
+				</section>
+			</header>
+
+			<section class="slider">
+				<h3>Discover great bundles</h3>
+				<hr>
+				
+				<article class="article_slider">
+					<section class="image_slider1">
+						<h1 class="title_slider">Introducing Swift</h1>
+						<ul class="tags">
+							<li class="tag">apple</li>
+							<li class="tag">swift</li>
+							<li class="tag">ios</li>
+							<li class="tag">decelopment</li>
+						</ul>
+						<footer class="article_info">
+							<div class="title">
+								<img src="/images/nick.k.jpg">
+								<p class="name"><strong>Nick Coster</strong></p>
+							</div>
+							<p class="description">Get ready to learn Apple's exciting new programming language. You'll be able to make your own iOS apps in no time.</p>
+						</footer>
+					</section>
+		
+				
+
+					<section class="image_slider two">
+						<h1 class="title_slider">November music addictions</h1>
+						<ul class="tags">
+							<li class="tag">music</li>
+							<li class="tag">ben howard</li>
+							<li class="tag">hozier</li>
+						</ul>
+						<footer class="article_info">
+							<div class="title">
+								<img src="/images/nick.jpg">
+								<p class="name"><strong>Nick de Bruijn</strong></p>
+							</div>
+							<p class="description">Some of my favourite albums for this month! The New album of Ben Howard dropped, Hoziers first album is...</p>
+						</footer>
+					</section>
+
+					<section class="image_slider three">
+						<h1 class="title_slider">Part-up Development Technology</h1>
+						<ul class="tags">
+							<li class="tag">meteor</li>
+							<li class="tag">nodejs</li>
+							<li class="tag">javascript</li>
+							<li class="tag">part-up</li>
+						</ul>
+						<footer class="article_info">
+							<div class="title">
+								<img src="/images/peter.jpg">
+								<p class="name"><strong>Peter Peerdeman</strong></p>
+							</div>
+							<p class="description">This is a collection of sources explaining the technology and methodology used to build Part-up.com...</p>
+						</footer>
+					</section>
+
+					<section class="image_slider four">
+						<h1 class="title_slider">Inception! The Bundle About Bundlin</h1>
+						<ul class="tags">
+							<li class="tag">startup</li>
+							<li class="tag">content</li>
+							<li class="tag">curation</li>
+						</ul>
+						<footer class="article_info">
+							<div class="title">
+								<img src="/images/nick.jpg">
+								<p class="name"><strong>Nick de Bruijn</strong></p>
+							</div>
+							<p class="description">Everything you need to know about the launch of Bundlin.com, the exciting new startup from... </p>
+						</footer>
+					</section>
+
+				</article>
+			</section>
+
+			<section class="content">
+				<section class="experience">
+					<h1>Creating the wow experience with bundles of web content.</h1>
+					<p>You're constantly scouring the web discovering great content, leading to valuable selections of articles, videos and images on any subject of interest. Through Bundlin, you can capture and share these selections, transforming them into stunning looking bundles of indefinite existence.</p>
+					<section class="info">
+							<section class="info_join">
+						<article>
+							<img src="/images/chair.png">
+							<h1>Enjoy the experience</h1>
+							<p>Bundlin offers you a fast, easy and seamless way to create stunning looking bundles of your favorite web content.</p>
+						</article>
+						<article>
+							<img src="/images/book.png">
+							<h1>Capture great content</h1>
+							<p>Capture the valuable process of finding amazing content into great bundles of indefinite existence.</p>
+						</article>	
+						<article>
+							<img src="/images/road.png">
+							<h1>Add value to content</h1>
+							<p>By selecting links and defining the relationships between those links, you make existing content more valuable.</p>
+						</article>	
+						<article>
+							<img src="/images/bird.png">
+							<h1>Share your content</h1>
+							<p>Use Bundlin to share your passion and thoughts with the world, without having to create content yourself.</p>
+						</article>		
+					</section>
+					</section>
+				</section>	
+			</section>
+			
+			<section class="join">
+				<section class="info_join">
+					<h1>Join our awesome group of beta users!</h1>
+					<p>Bundlin is still in an early phase of delevopment. We need your feedback in order to make Bundlin truly amazing. Are you passionate about product development, then please help us by testing bundlin. We only have room for 612 more beta accounts, so you better hurry up!</p>
+					<button>Log in / Sign up</button>
+				</section>
+			</section>
+
+			<section class="corousel">
+				<ul>
+					<li><img src="/images/intro-photoroll-01.jpg"></li>
+					<li><img src="/images/intro-photoroll-02.jpg"></li>
+					<li><img src="/images/intro-photoroll-03.jpg"></li>
+					<li><img src="/images/intro-photoroll-05.jpg"></li>
+					<li><img src="/images/intro-photoroll-04.jpg"></li>
+				</ul>
+			</section>
+
+			<section class="team">
+				<section class="info_join">
+					<h1>Our team of dreamers.</h1>
+					<p>Bundlin is handcrafted by Lifely. When we're not working for our awesome clients we spend every waking minute developing Bundlin.</p>
+					<ul class="team_members">
+						<li><img class="member_img" src="/images/pim.jpg"></li>
+						<p class="member"><strong>Pim Verlaar</strong><br>Founder en design
+						</p>
+						<li><img class="member_img" src="/images/nick.jpg"></li>
+						<p class="member"><strong>Nick de Bruijn</strong><br>Founder</p>
+						<li><img class="member_img" src="/images/peter.jpg"></li>
+						<p class="member"><strong>Peter Peerdeman</strong><br>Lead Tech</p>
+						<li><img class="member_img" src="/images/bryan.jpg"></li>
+						<p class="member"><strong>Bryan te Beek</strong><br>Coding</p>
+						<li><img class="member_img" src="/images/jesse.jpg"></li>
+						<p class="member"><strong>Jesse de Vriend</strong><br>Coding</p>
+						<li><img class="member_img" src="/images/nick.k.jpg"></li>
+						<p class="member"><strong>Nick Koster</strong><br>Coding</p>
+						<li><img class="member_img" src="/images/take.jpg"></li>
+						<p class="member"><strong>Take Lijzenga</strong><br>Design</p>
+						<li><img class="member_img" src="/images/leon.jpg"></li>
+						<p class="member"><strong>Leon Smit</strong><br>Coding</p>
+						<li><img class="member_img" src="/images/janna.jpg"></li>
+						<p class="member"><strong>Janna Boekema</strong><br>Content strategy</p>
+					</ul>
+					<section class="business">
+						<span><img class="office" src="/images/team-01.jpg"></span>
+						<span><img class="office" src="/images/team-02.jpg"></span>
+					</section>
+				</section>
+			</section>
+
+			<h3>More</h3>
+			
+			<footer class="footer">
+				<h4>Made with love in Amsterdam</h4>
+				<p><a href="">nick@bundlin.com</a></p>
+				<span><img src="">Twitter</span>
+				<span><img src="">Facebook</span>
+			</footer>
+</main>
+
+<!-- <script src="/javascripts/animations.js"></script> -->
+</body>
+</html>
