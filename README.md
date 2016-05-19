@@ -1,7 +1,7 @@
 # project-2
 
 #Advies rapport lifely
-http://spotitshopit.com/advies_lifly/
+http://spotitshopit.com/advies_lifley/
 
 # Case
 Lifely is a digital agency who ask Communication and Multimedia Design students to give some advise about preformance. We could choose between two different websites: bundlin.com and part-up.com. I choose Bundlin. 
